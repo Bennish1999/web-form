@@ -1,0 +1,176 @@
+<!DOCTYPE html>  
+<html>
+	<head>
+		<script>
+			function Webform() {
+				var name =
+					document.forms.RegForm.Name.value;
+				var email =
+					document.forms.RegForm.EMail.value;
+				var phone =
+					document.forms.RegForm.Telephone.value;
+				var what =
+					document.forms.RegForm.Subject.value;
+				var password =
+					document.forms.RegForm.Password.value;
+				var address =
+					document.forms.RegForm.Address.value;
+				var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+				var regPhone=/^\d{10}$/;									 // Javascript reGex for Phone Number validation.
+				var regName = /\d+$/g;								 // Javascript reGex for Name validation
+
+				if (name == "" || regName.test(name)) {
+					window.alert("Please enter your name properly.");
+					name.focus();
+					return false;
+				}
+
+				if (address == "") {
+					window.alert("Please enter your address.");
+					address.focus();
+					return false;
+				}
+				
+				if (email == "" || !regEmail.test(email)) {
+					window.alert("Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+				
+				if (password == "") {
+					alert("Please enter your password");
+					password.focus();
+					return false;
+				}
+
+				if(password.length <6){
+					alert("Password should be atleast 6 character long");
+					password.focus();
+					return false;
+
+				}
+				if (phone == "" || !regPhone.test(phone)) {
+					alert("Please enter valid phone number.");
+					phone.focus();
+					return false;
+				}
+
+				if (what.selectedIndex == -1) {
+
+					alert("Please enter your course.");
+					what.focus();
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+
+<style>  
+	body{  
+	  font-family: Calibri, Helvetica, sans-serif;  
+	  background-color: pink;  
+	}  
+	.container {  
+		padding: 50px;  
+	  background-color: rgb(202, 231, 240);  
+	}  
+	  
+	input[type=text], input[type=password], textarea {  
+	  width: 100%;  
+	  padding: 15px;  
+	  margin: 5px 0 22px 0;  
+	  display: inline-block;  
+	  border: none;  
+	  background: #f1f1f1;  
+	}  
+	input[type=text]:focus, input[type=password]:focus {  
+	  background-color: orange;  
+	  outline: none;  
+	}  
+	 div {  
+				padding: 10px 0;  
+			 }  
+	hr {  
+	  border: 1px solid #f1f1f1;  
+	  margin-bottom: 25px;  
+	}  
+	.registerbtn {  
+	  background-color: #4CAF50;  
+	  color: white;  
+	  padding: 16px 20px;  
+	  margin: 8px 0;  
+	  border: none;  
+	  cursor: pointer;  
+	  width: 100%;  
+	  opacity: 0.9;  
+	}  
+	.registerbtn:hover {  
+	  opacity: 1;  
+	}  
+	</style>  
+	</head>
+
+	<body>
+		<div class="container"> 
+		<h1 style="text-align: center;">Student Registeration Form</h1>
+		<form name="RegForm" onsubmit="return Webform()" method="post">
+			
+<p>Name: <input type="text" size="65" name="Name" /></p>
+
+<p action="/action_page.php">
+	<label for="birthday">Date of Birth:</label>
+	<input type="date" id="birthday" name="birthday">
+</p>
+
+<br />
+			
+<p>	Gender :  
+		<br>  
+		<input type="radio" value="Male" name="gender" checked > Male   
+		<input type="radio" value="Female" name="gender"> Female   
+		<input type="radio" value="Other" name="gender"> Other  
+		  
+</p>
+
+<br />
+
+<p>
+	SELECT YOUR COURSE
+	<select type="text" value="" name="Subject">
+		<option value="Course">Course</option>  
+<option value="BCA">BCA</option>  
+<option value="BBA">BBA</option>  
+<option value="B.Tech">B.Tech</option>  
+<option value="MBA">MBA</option>  
+<option value="MCA">MCA</option>  
+<option value="M.Tech">M.Tech</option>  
+		
+	</select>
+</p>
+
+
+<br />
+
+<p>Address: <input type="text" size="65" name="Address" /></p>
+			
+<p>E-mail Address: <input type="text" size="65" name="EMail" /></p>
+
+<p>Phone: <input type="text" size="65" name="Telephone" /></p>
+
+<p>Password: <input type="text" size="65" name="Password" /></p>
+							  					
+<p>Comments: <textarea cols="55"
+							name="Comment"> </textarea></p>
+
+			
+<p>
+				<input type="submit"
+					value="send" name="Submit" />
+				<input type="reset"
+					value="Reset" name="Reset" />
+			</p>
+
+		</form>
+	</body>
+</html>
