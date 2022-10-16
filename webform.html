@@ -92,7 +92,7 @@
 				padding: 10px 0;  
 			 }  
 	hr {  
-	  border: 1px solid #f1f1f1;  
+	  border: 2px solid #f1f1f1;  
 	  margin-bottom: 25px;  
 	}  
 	.registerbtn {  
@@ -113,7 +113,7 @@
 
 	<body>
 		<div class="container"> 
-		<h1 style="text-align: center;">Student Registeration Form</h1>
+			<center>  <h1> Student Registeration Form</h1> </center>
 		<form name="RegForm" onsubmit="return Webform()" method="post">
 			
 <p>Name: <input type="text" size="65" name="Name" /></p>
@@ -163,13 +163,7 @@
 <p>Comments: <textarea cols="55"
 							name="Comment"> </textarea></p>
 
-			
-<p>
-				<input type="submit"
-					value="send" name="Submit" />
-				<input type="reset"
-					value="Reset" name="Reset" />
-			</p>
+<p><button type="submit" class="registerbtn">Register</button>    </p>
 
 		</form>
 	</body>
